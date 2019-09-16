@@ -59,14 +59,7 @@ public class Prime {
 			System.out.println();
 			boolean b;
 			for (int j = 2; j <= 1000; j++) {
-				b = true;
-				for (int i = 2; i < j / 2; i++) {
-					if (j % i == 0) {
-						b = false;
-						break;
-					}
-				}
-				if (b && isPallindrome(j))
+				if (isPrime(j) && isPallindrome(j))
 					System.out.print(j + " ");
 			}
 		}
@@ -76,17 +69,11 @@ public class Prime {
 		 */
 		public static void primeAnagrams() {
 			ArrayList<Integer> ar = new ArrayList<Integer>();
-			System.out.println();
-			boolean b;
-			for (int j = 2; j <= 1000; j++) {
-				b = true;
-				for (int i = 2; i < j / 2; i++) {
-					if (j % i == 0) {
-						b = false;
-						break;
-					}
-				}
-				if (b)
+			System.out.println();			
+			for (int j = 2; j <= 1000; j++) 
+			{
+
+				if (isPrime(j))
 					ar.add(j);
 			}
 			for (int i = 0; i < ar.size(); i++) {
@@ -102,7 +89,7 @@ public class Prime {
 		// TODO Auto-generated method stub
 
 		int n;
-		Prime p = new Prime();
+
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter a no");
 		n=sc.nextInt();
@@ -117,7 +104,7 @@ public class Prime {
 	       }  
 		 System.out.println("Prime Anagrams");
 		 Prime.primeAnagrams();
-		 System.out.println("Prime Palin");
+		 System.out.println("Prime Palindrome");
 
 		 Prime.primePallindrome();
 		 sc.close();

@@ -22,7 +22,7 @@ public class VendingMachine {
 	 */
 	static void notes(int value) 
 	{
-		if (value / NOTES[I] != 0) 
+		while (value / NOTES[I] != 0) 
 		{
 			TOTAL += (value / NOTES[I]);
 			System.out.println(NOTES[I] + "rs notes :" + value / NOTES[I]);
