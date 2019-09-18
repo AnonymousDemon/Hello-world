@@ -16,6 +16,7 @@ public class BubbleIo {
 		Scanner sc = new Scanner(System.in);
 		File f = new File("/home/admin0/eclipse-workspace/Java/src/com/bridgelabz/Algo/Binary");
 		FileReader fr = new FileReader(f);
+		@SuppressWarnings("resource")
 		BufferedReader br = new BufferedReader(fr);
 		String st;
 		while((st=br.readLine())!=null)
@@ -31,7 +32,7 @@ public class BubbleIo {
         System.out.println(str[j]);
         }
         Utility.bubbleS(str);//using bubble sort
-
+        sc.close();
 	}
 
 }

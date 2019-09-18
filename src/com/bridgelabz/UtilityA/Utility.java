@@ -143,6 +143,9 @@ public class Utility {
            System.out.println(a[j]);
         }
     }
+	/**
+	 * @param range
+	 */
 	public static void magicNumber(int range) {
 		// TODO Auto-generated method stub
 		Scanner scanner = new Scanner(System.in);
@@ -173,6 +176,104 @@ public class Utility {
 
 		System.out.println("Your number is :" + mi);
 		scanner.close();
-
 	}
+	
+    /**
+     * @param array
+     */
+    public static void mergeSort(int[] array)
+    {
+        if(array == null)
+        {
+            return;
+        }
+ 
+        if(array.length > 1)
+        {
+            int mid = array.length / 2;
+ 
+            // Split left part
+            int[] left = new int[mid];
+            System.out.print("Left arr : "+" ");
+            for(int i = 0; i < mid; i++)
+            {
+                left[i] = array[i];
+                System.out.print(left[i]);
+            }
+             
+            // Split right part
+            int[] right = new int[array.length - mid];
+            System.out.print("Right arr : "+" ");
+            for(int i = mid; i < array.length; i++)
+            {
+                right[i - mid] = array[i];
+                System.out.print(right[i-mid]);
+
+            }
+            mergeSort(left);
+            mergeSort(right);
+ 
+            int i = 0;
+            int j = 0;
+            int k = 0;
+ 
+            // Merge left and right arrays
+            while(i < left.length && j < right.length)
+            {
+                if(left[i] < right[j])
+                {
+                    array[k] = left[i];
+                    i++;
+                }
+                else
+                {
+                    array[k] = right[j];
+                    j++;
+                }
+                k++;
+            }
+            // Collect remaining elements
+            while(i < left.length)
+            {
+                array[k] = left[i];
+                i++;
+                k++;
+            }
+            while(j < right.length)
+            {
+                array[k] = right[j];
+                j++;
+                k++;
+            }
+        }
+    }
+    
+    /**
+     * @param n
+     */
+    public static void FtoC(int n)
+    {
+    	int f = (n * 9/5)+32;
+    	System.out.println("Far to cel = "+f);
+    }
+    /**
+     * @param n
+     */
+    public static void CtoF(int n)
+    {
+    	int c = (n-32)+5/9;
+    	System.out.println(" cel to Far = "+c);
+    }
+    public static double findSquareRootUsingNewtonsMethod(int c)
+    {
+    	double t, epsilon;
+		t = c;
+		epsilon=1*(Math.pow(10, -15));
+		epsilon = 1e-15;
+
+		while (Math.abs(t - c / t) > epsilon * t) {
+			t = (c / t + t) / 2.0;
+		}
+		return t;
+    }
 }
