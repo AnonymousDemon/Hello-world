@@ -44,7 +44,7 @@ public class Ll{
 			n.next=null;
 			if(Ll.head==null)
 			{
-				list.head=n;
+				Ll.head=n;
 				n.next=null;
 			}
 			else{
